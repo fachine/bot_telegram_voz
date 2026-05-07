@@ -1,0 +1,739 @@
+{
+    "CONTRATOS": [
+        {
+            "name": "CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE LIMPEZA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE LIMPEZA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\CONTRATOS\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE LIMPEZA.docx"
+        },
+        {
+            "name": "CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE MANUTENÇÃO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE MANUTENÇÃO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\CONTRATOS\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE MANUTENÇÃO.docx"
+        },
+        {
+            "name": "CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE PORTARIA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE PORTARIA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\CONTRATOS\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE PORTARIA.docx"
+        },
+        {
+            "name": "CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE SEGURANÇA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE SEGURANÇA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\CONTRATOS\\CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE SEGURANÇA.docx"
+        }
+    ],
+    "FORMULÁRIOS E FICHAS": [
+        {
+            "name": "CHECKLIST DE MANUTENÇÃO PREVENTIVA E CORRETIVA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CHECKLIST DE MANUTENÇÃO PREVENTIVA E CORRETIVA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\CHECKLIST DE MANUTENÇÃO PREVENTIVA E CORRETIVA.docx"
+        },
+        {
+            "name": "FICHA CADASTRAL DO CONDÔMINO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FICHA CADASTRAL DO CONDÔMINO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FICHA CADASTRAL DO CONDÔMINO.docx"
+        },
+        {
+            "name": "FICHA DE ATA DE ASSEMBLEIA CONDOMINIAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FICHA DE ATA DE ASSEMBLEIA CONDOMINIAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FICHA DE ATA DE ASSEMBLEIA CONDOMINIAL.docx"
+        },
+        {
+            "name": "FICHA DE BALANCETE MENSAL DO CONDOMÍNIO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FICHA DE BALANCETE MENSAL DO CONDOMÍNIO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FICHA DE BALANCETE MENSAL DO CONDOMÍNIO.docx"
+        },
+        {
+            "name": "FICHA DE ENTRADA . SAÍDA DE MORADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FICHA DE ENTRADA . SAÍDA DE MORADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FICHA DE ENTRADA . SAÍDA DE MORADORES.docx"
+        },
+        {
+            "name": "FICHA DE REGULAMENTO INTERNO DO CONDOMÍNIO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FICHA DE REGULAMENTO INTERNO DO CONDOMÍNIO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FICHA DE REGULAMENTO INTERNO DO CONDOMÍNIO.docx"
+        },
+        {
+            "name": "FORMULÁRIO DE AUTORIZAÇÃO DE VISITANTES E PRESTADORES DE SERVIÇOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FORMULÁRIO DE AUTORIZAÇÃO DE VISITANTES E PRESTADORES DE SERVIÇOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FORMULÁRIO DE AUTORIZAÇÃO DE VISITANTES E PRESTADORES DE SERVIÇOS.docx"
+        },
+        {
+            "name": "FORMULÁRIO DE REQUISIÇÃO DE MANUTENÇÃO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FORMULÁRIO DE REQUISIÇÃO DE MANUTENÇÃO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\FORMULÁRIOS E FICHAS\\FORMULÁRIO DE REQUISIÇÃO DE MANUTENÇÃO.docx"
+        }
+    ],
+    "MANUAIS E REGRAS": [
+        {
+            "name": "MANUAL DE BOAS PRÁTICAS PARA CONDOMÍNIOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUAL DE BOAS PRÁTICAS PARA CONDOMÍNIOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\MANUAIS E REGRAS\\MANUAL DE BOAS PRÁTICAS PARA CONDOMÍNIOS.docx"
+        }
+    ],
+    "ADMINISTRATIVO": [
+        {
+            "name": "ARQUIVAMENTO E GUARDA DE DOCUMENTOS FÍSICOS E DIGITAIS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ARQUIVAMENTO E GUARDA DE DOCUMENTOS FÍSICOS E DIGITAIS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ARQUIVAMENTO E GUARDA DE DOCUMENTOS FÍSICOS E DIGITAIS.docx"
+        },
+        {
+            "name": "ATENDIMENTO AO PÚBLICO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ATENDIMENTO AO PÚBLICO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ATENDIMENTO AO PÚBLICO.docx"
+        },
+        {
+            "name": "ATUALIZAÇÃO DE QUADRO DE AVISOS E INFORMAÇÕES NO MURAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ATUALIZAÇÃO DE QUADRO DE AVISOS E INFORMAÇÕES NO MURAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ATUALIZAÇÃO DE QUADRO DE AVISOS E INFORMAÇÕES NO MURAL.docx"
+        },
+        {
+            "name": "AUDITORIA INTERNA DE PROCESSOS ADMINISTRATIVOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\AUDITORIA INTERNA DE PROCESSOS ADMINISTRATIVOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\AUDITORIA INTERNA DE PROCESSOS ADMINISTRATIVOS.docx"
+        },
+        {
+            "name": "CADASTRO DE MORADORES, VEÍCULOS E PRESTADORES DE SERVIÇO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CADASTRO DE MORADORES, VEÍCULOS E PRESTADORES DE SERVIÇO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CADASTRO DE MORADORES, VEÍCULOS E PRESTADORES DE SERVIÇO.docx"
+        },
+        {
+            "name": "COMUNICAÇÃO INTERNA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\COMUNICAÇÃO INTERNA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\COMUNICAÇÃO INTERNA.docx"
+        },
+        {
+            "name": "CONTRATAÇÃO E GESTÃO DE FUNCIONÁRIOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTRATAÇÃO E GESTÃO DE FUNCIONÁRIOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CONTRATAÇÃO E GESTÃO DE FUNCIONÁRIOS.docx"
+        },
+        {
+            "name": "CONTROLE DE CONTRATOS COM PRESTADORES DE SERVIÇO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE CONTRATOS COM PRESTADORES DE SERVIÇO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CONTROLE DE CONTRATOS COM PRESTADORES DE SERVIÇO.docx"
+        },
+        {
+            "name": "CONTROLE DE CORRESPONDÊNCIAS E ENCOMENDAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE CORRESPONDÊNCIAS E ENCOMENDAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CONTROLE DE CORRESPONDÊNCIAS E ENCOMENDAS.docx"
+        },
+        {
+            "name": "CONTROLE DE DOCUMENTOS OBRIGATÓRIOS DO CONDOMÍNIO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE DOCUMENTOS OBRIGATÓRIOS DO CONDOMÍNIO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CONTROLE DE DOCUMENTOS OBRIGATÓRIOS DO CONDOMÍNIO.docx"
+        },
+        {
+            "name": "CONTROLE DE MUDANÇAS E MUDANÇAS AGENDADAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE MUDANÇAS E MUDANÇAS AGENDADAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CONTROLE DE MUDANÇAS E MUDANÇAS AGENDADAS.docx"
+        },
+        {
+            "name": "CONVOCAÇÃO E REGISTRO DE ASSEMBLEIAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONVOCAÇÃO E REGISTRO DE ASSEMBLEIAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\CONVOCAÇÃO E REGISTRO DE ASSEMBLEIAS.docx"
+        },
+        {
+            "name": "ELABORAÇÃO E ATUALIZAÇÃO DO REGULAMENTO INTERNO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ELABORAÇÃO E ATUALIZAÇÃO DO REGULAMENTO INTERNO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ELABORAÇÃO E ATUALIZAÇÃO DO REGULAMENTO INTERNO.docx"
+        },
+        {
+            "name": "ELABORAÇÃO E DIVULGAÇÃO DE COMUNICADOS OFICIAIS E INFORMATIVOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ELABORAÇÃO E DIVULGAÇÃO DE COMUNICADOS OFICIAIS E INFORMATIVOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ELABORAÇÃO E DIVULGAÇÃO DE COMUNICADOS OFICIAIS E INFORMATIVOS.docx"
+        },
+        {
+            "name": "ELABORAÇÃO E ENVIO DE BOLETOS DE COBRANÇA DE TAXAS CONDOMINIAIS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ELABORAÇÃO E ENVIO DE BOLETOS DE COBRANÇA DE TAXAS CONDOMINIAIS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ELABORAÇÃO E ENVIO DE BOLETOS DE COBRANÇA DE TAXAS CONDOMINIAIS.docx"
+        },
+        {
+            "name": "GERENCIAMENTO DE RECLAMAÇÕES E SUGESTÕES DOS MORADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\GERENCIAMENTO DE RECLAMAÇÕES E SUGESTÕES DOS MORADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\GERENCIAMENTO DE RECLAMAÇÕES E SUGESTÕES DOS MORADORES.docx"
+        },
+        {
+            "name": "GESTÃO DE DOCUMENTOS E ARQUIVOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\GESTÃO DE DOCUMENTOS E ARQUIVOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\GESTÃO DE DOCUMENTOS E ARQUIVOS.docx"
+        },
+        {
+            "name": "INTEGRAÇÃO DE NOVOS MORADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\INTEGRAÇÃO DE NOVOS MORADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\INTEGRAÇÃO DE NOVOS MORADORES.docx"
+        },
+        {
+            "name": "ORGANIZAÇÃO E CONSERVAÇÃO DO LIVRO DE OCORRÊNCIAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ORGANIZAÇÃO E CONSERVAÇÃO DO LIVRO DE OCORRÊNCIAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\ORGANIZAÇÃO E CONSERVAÇÃO DO LIVRO DE OCORRÊNCIAS.docx"
+        },
+        {
+            "name": "USO E CONTROLE DO SISTEMA DE GESTÃO CONDOMINIAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\USO E CONTROLE DO SISTEMA DE GESTÃO CONDOMINIAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\USO E CONTROLE DO SISTEMA DE GESTÃO CONDOMINIAL.docx"
+        },
+        {
+            "name": "UTILIZAÇÃO E RESERVA DE ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\UTILIZAÇÃO E RESERVA DE ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\ADMINISTRATIVO\\UTILIZAÇÃO E RESERVA DE ÁREAS COMUNS.docx"
+        }
+    ],
+    "FINANCEIRO": [
+        {
+            "name": "ACORDOS E NEGOCIAÇÕES COM INADIMPLENTES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ACORDOS E NEGOCIAÇÕES COM INADIMPLENTES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\ACORDOS E NEGOCIAÇÕES COM INADIMPLENTES.docx"
+        },
+        {
+            "name": "ARQUIVAMENTO DE DOCUMENTOS FISCAIS E COMPROVANTES FINANCEIROS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ARQUIVAMENTO DE DOCUMENTOS FISCAIS E COMPROVANTES FINANCEIROS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\ARQUIVAMENTO DE DOCUMENTOS FISCAIS E COMPROVANTES FINANCEIROS.docx"
+        },
+        {
+            "name": "AUDITORIA INTERNA OU EXTERNA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\AUDITORIA INTERNA OU EXTERNA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\AUDITORIA INTERNA OU EXTERNA.docx"
+        },
+        {
+            "name": "AUTORIZAÇÃO E APROVAÇÃO DE DESPESAS (NÍVEIS DE ALÇADA)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\AUTORIZAÇÃO E APROVAÇÃO DE DESPESAS (NÍVEIS DE ALÇADA).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\AUTORIZAÇÃO E APROVAÇÃO DE DESPESAS (NÍVEIS DE ALÇADA).docx"
+        },
+        {
+            "name": "COBRANÇA DE INADIMPLENTES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\COBRANÇA DE INADIMPLENTES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\COBRANÇA DE INADIMPLENTES.docx"
+        },
+        {
+            "name": "CONCILIAÇÃO BANCÁRIA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONCILIAÇÃO BANCÁRIA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\CONCILIAÇÃO BANCÁRIA.docx"
+        },
+        {
+            "name": "CONTROLE DE CONTAS A PAGAR E A RECEBER",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE CONTAS A PAGAR E A RECEBER.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\CONTROLE DE CONTAS A PAGAR E A RECEBER.docx"
+        },
+        {
+            "name": "CONTROLE DE RECEITAS EXTRAS (ALUGUÉIS, MULTAS, ETC.)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE RECEITAS EXTRAS (ALUGUÉIS, MULTAS, ETC.).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\CONTROLE DE RECEITAS EXTRAS (ALUGUÉIS, MULTAS, ETC.).docx"
+        },
+        {
+            "name": "CONTROLE DO FUNDO DE RESERVA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DO FUNDO DE RESERVA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\CONTROLE DO FUNDO DE RESERVA.docx"
+        },
+        {
+            "name": "ELABORAÇÃO DE ORÇAMENTOS E PREVISÃO ORÇAMENTÁRIA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ELABORAÇÃO DE ORÇAMENTOS E PREVISÃO ORÇAMENTÁRIA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\ELABORAÇÃO DE ORÇAMENTOS E PREVISÃO ORÇAMENTÁRIA.docx"
+        },
+        {
+            "name": "ELABORAÇÃO E APROVAÇÃO DO BALANCETE MENSAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ELABORAÇÃO E APROVAÇÃO DO BALANCETE MENSAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\ELABORAÇÃO E APROVAÇÃO DO BALANCETE MENSAL.docx"
+        },
+        {
+            "name": "EMISSÃO E ENVIO DE BOLETOS DE COBRANÇA CONDOMINIAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\EMISSÃO E ENVIO DE BOLETOS DE COBRANÇA CONDOMINIAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\EMISSÃO E ENVIO DE BOLETOS DE COBRANÇA CONDOMINIAL.docx"
+        },
+        {
+            "name": "GESTÃO DE CONTRATOS E PAGAMENTOS RECORRENTES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\GESTÃO DE CONTRATOS E PAGAMENTOS RECORRENTES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\GESTÃO DE CONTRATOS E PAGAMENTOS RECORRENTES.docx"
+        },
+        {
+            "name": "MOVIMENTAÇÃO E CONTROLE DE CONTAS BANCÁRIAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MOVIMENTAÇÃO E CONTROLE DE CONTAS BANCÁRIAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\MOVIMENTAÇÃO E CONTROLE DE CONTAS BANCÁRIAS.docx"
+        },
+        {
+            "name": "PLANEJAMENTO E CONTROLE DO ORÇAMENTO ANUAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\PLANEJAMENTO E CONTROLE DO ORÇAMENTO ANUAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\PLANEJAMENTO E CONTROLE DO ORÇAMENTO ANUAL.docx"
+        },
+        {
+            "name": "PRESTAÇÃO DE CONTAS MENSAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\PRESTAÇÃO DE CONTAS MENSAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\PRESTAÇÃO DE CONTAS MENSAL.docx"
+        },
+        {
+            "name": "PRESTAÇÃO DE CONTAS PARA O CONSELHO FISCAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\PRESTAÇÃO DE CONTAS PARA O CONSELHO FISCAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\PRESTAÇÃO DE CONTAS PARA O CONSELHO FISCAL.docx"
+        },
+        {
+            "name": "PROVISIONAMENTO DE DESPESAS FUTURAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\PROVISIONAMENTO DE DESPESAS FUTURAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\PROVISIONAMENTO DE DESPESAS FUTURAS.docx"
+        },
+        {
+            "name": "RATEIO DE DESPESAS EXTRAORDINÁRIAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\RATEIO DE DESPESAS EXTRAORDINÁRIAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\RATEIO DE DESPESAS EXTRAORDINÁRIAS.docx"
+        },
+        {
+            "name": "REGISTRO E CONTROLE DE INADIMPLÊNCIA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\REGISTRO E CONTROLE DE INADIMPLÊNCIA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\FINANCEIRO\\REGISTRO E CONTROLE DE INADIMPLÊNCIA.docx"
+        }
+    ],
+    "LIMPEZA E CONSERVAÇÃO": [
+        {
+            "name": "COLETA E DESCARTE DE LIXO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\COLETA E DESCARTE DE LIXO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\COLETA E DESCARTE DE LIXO.docx"
+        },
+        {
+            "name": "CONSERVAÇÃO DE ÁREAS COM PISCINA (LIMPEZA DE BORDA, VESTIÁRIOS, CHUVEIROS EXTERNOS)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONSERVAÇÃO DE ÁREAS COM PISCINA (LIMPEZA DE BORDA, VESTIÁRIOS, CHUVEIROS EXTERNOS).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\CONSERVAÇÃO DE ÁREAS COM PISCINA (LIMPEZA DE BORDA, VESTIÁRIOS, CHUVEIROS EXTERNOS).docx"
+        },
+        {
+            "name": "CONTROLE DE PRODUTOS DE LIMPEZA E EQUIPAMENTOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE PRODUTOS DE LIMPEZA E EQUIPAMENTOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\CONTROLE DE PRODUTOS DE LIMPEZA E EQUIPAMENTOS.docx"
+        },
+        {
+            "name": "CONTROLE E REPOSIÇÃO DE MATERIAIS DE LIMPEZA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE E REPOSIÇÃO DE MATERIAIS DE LIMPEZA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\CONTROLE E REPOSIÇÃO DE MATERIAIS DE LIMPEZA.docx"
+        },
+        {
+            "name": "HIGIENIZAÇÃO DE BANHEIROS DAS ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\HIGIENIZAÇÃO DE BANHEIROS DAS ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\HIGIENIZAÇÃO DE BANHEIROS DAS ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "INSPEÇÃO E SUBSTITUIÇÃO DE LÂMPADAS QUEIMADAS NAS ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\INSPEÇÃO E SUBSTITUIÇÃO DE LÂMPADAS QUEIMADAS NAS ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\INSPEÇÃO E SUBSTITUIÇÃO DE LÂMPADAS QUEIMADAS NAS ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "LAVAGEM DE LIXEIRAS E ÁREAS DE DESCARTE DE RESÍDUOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LAVAGEM DE LIXEIRAS E ÁREAS DE DESCARTE DE RESÍDUOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LAVAGEM DE LIXEIRAS E ÁREAS DE DESCARTE DE RESÍDUOS.docx"
+        },
+        {
+            "name": "LIMPEZA DAS ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DAS ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DAS ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "LIMPEZA DE BRINQUEDOTECAS, ACADEMIAS E SALAS DE JOGOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DE BRINQUEDOTECAS, ACADEMIAS E SALAS DE JOGOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DE BRINQUEDOTECAS, ACADEMIAS E SALAS DE JOGOS.docx"
+        },
+        {
+            "name": "LIMPEZA DE CAIXAS D’ÁGUA (LIMPEZA PROGRAMADA E AGENDAMENTO)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DE CAIXAS D’ÁGUA (LIMPEZA PROGRAMADA E AGENDAMENTO).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DE CAIXAS D’ÁGUA (LIMPEZA PROGRAMADA E AGENDAMENTO).docx"
+        },
+        {
+            "name": "LIMPEZA DE ELEVADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DE ELEVADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DE ELEVADORES.docx"
+        },
+        {
+            "name": "LIMPEZA DE GARAGENS E ESTACIONAMENTOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DE GARAGENS E ESTACIONAMENTOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DE GARAGENS E ESTACIONAMENTOS.docx"
+        },
+        {
+            "name": "LIMPEZA DE PORTARIAS E GUARITAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DE PORTARIAS E GUARITAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DE PORTARIAS E GUARITAS.docx"
+        },
+        {
+            "name": "LIMPEZA DE VIDROS E JANELAS EM ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA DE VIDROS E JANELAS EM ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA DE VIDROS E JANELAS EM ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "LIMPEZA PREVENTIVA EM DIAS DE CHUVA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA PREVENTIVA EM DIAS DE CHUVA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA PREVENTIVA EM DIAS DE CHUVA.docx"
+        },
+        {
+            "name": "LIMPEZA PÓS-EVENTO NAS ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\LIMPEZA PÓS-EVENTO NAS ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\LIMPEZA PÓS-EVENTO NAS ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "MANUTENÇÃO DA JARDINAGEM E ÁREAS EXTERNAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUTENÇÃO DA JARDINAGEM E ÁREAS EXTERNAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\MANUTENÇÃO DA JARDINAGEM E ÁREAS EXTERNAS.docx"
+        },
+        {
+            "name": "MANUTENÇÃO DE PISOS (ENCERAMENTO, APLICAÇÃO DE PRODUTOS ESPECÍFICOS)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUTENÇÃO DE PISOS (ENCERAMENTO, APLICAÇÃO DE PRODUTOS ESPECÍFICOS).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\MANUTENÇÃO DE PISOS (ENCERAMENTO, APLICAÇÃO DE PRODUTOS ESPECÍFICOS).docx"
+        },
+        {
+            "name": "REMOÇÃO DE RESÍDUOS RECICLÁVEIS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\REMOÇÃO DE RESÍDUOS RECICLÁVEIS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\LIMPEZA E CONSERVAÇÃO\\REMOÇÃO DE RESÍDUOS RECICLÁVEIS.docx"
+        }
+    ],
+    "MANUTENÇÃO PREDIAL": [
+        {
+            "name": "ACOMPANHAMENTO DE OBRAS E REFORMAS (UNIDADES E ÁREAS COMUNS)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ACOMPANHAMENTO DE OBRAS E REFORMAS (UNIDADES E ÁREAS COMUNS).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\ACOMPANHAMENTO DE OBRAS E REFORMAS (UNIDADES E ÁREAS COMUNS).docx"
+        },
+        {
+            "name": "AGENDAMENTO E SUPERVISÃO DE EMPRESAS TERCEIRIZADAS DE MANUTENÇÃO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\AGENDAMENTO E SUPERVISÃO DE EMPRESAS TERCEIRIZADAS DE MANUTENÇÃO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\AGENDAMENTO E SUPERVISÃO DE EMPRESAS TERCEIRIZADAS DE MANUTENÇÃO.docx"
+        },
+        {
+            "name": "ATUALIZAÇÃO E VERIFICAÇÃO DE PLANTAS, MANUAIS E REGISTROS TÉCNICOS DO PRÉDIO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ATUALIZAÇÃO E VERIFICAÇÃO DE PLANTAS, MANUAIS E REGISTROS TÉCNICOS DO PRÉDIO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\ATUALIZAÇÃO E VERIFICAÇÃO DE PLANTAS, MANUAIS E REGISTROS TÉCNICOS DO PRÉDIO.docx"
+        },
+        {
+            "name": "CHECKLIST DE MANUTENÇÃO PREDIAL (MENSAL, TRIMESTRAL E ANUAL)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CHECKLIST DE MANUTENÇÃO PREDIAL (MENSAL, TRIMESTRAL E ANUAL).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\CHECKLIST DE MANUTENÇÃO PREDIAL (MENSAL, TRIMESTRAL E ANUAL).docx"
+        },
+        {
+            "name": "CONSERVAÇÃO E MANUTENÇÃO DE PISOS E REVESTIMENTOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONSERVAÇÃO E MANUTENÇÃO DE PISOS E REVESTIMENTOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\CONSERVAÇÃO E MANUTENÇÃO DE PISOS E REVESTIMENTOS.docx"
+        },
+        {
+            "name": "CONTROLE DE MANUTENÇÕES CORRETIVAS (REGISTRO DE OCORRÊNCIAS E PROVIDÊNCIAS)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE MANUTENÇÕES CORRETIVAS (REGISTRO DE OCORRÊNCIAS E PROVIDÊNCIAS).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\CONTROLE DE MANUTENÇÕES CORRETIVAS (REGISTRO DE OCORRÊNCIAS E PROVIDÊNCIAS).docx"
+        },
+        {
+            "name": "CONTROLE DE PRAGAS E DEDETIZAÇÃO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE PRAGAS E DEDETIZAÇÃO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\CONTROLE DE PRAGAS E DEDETIZAÇÃO.docx"
+        },
+        {
+            "name": "CONTROLE DE TEMPERATURA E UMIDADE EM ÁREAS TÉCNICAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE TEMPERATURA E UMIDADE EM ÁREAS TÉCNICAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\CONTROLE DE TEMPERATURA E UMIDADE EM ÁREAS TÉCNICAS.docx"
+        },
+        {
+            "name": "CONTROLE E MANUTENÇÃO DE SISTEMA DE GÁS CANALIZADO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE E MANUTENÇÃO DE SISTEMA DE GÁS CANALIZADO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\CONTROLE E MANUTENÇÃO DE SISTEMA DE GÁS CANALIZADO.docx"
+        },
+        {
+            "name": "INSPEÇÃO DE PARA-RAIOS E SISTEMA DE ATERRAMENTO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\INSPEÇÃO DE PARA-RAIOS E SISTEMA DE ATERRAMENTO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\INSPEÇÃO DE PARA-RAIOS E SISTEMA DE ATERRAMENTO.docx"
+        },
+        {
+            "name": "INSPEÇÃO E LIMPEZA DE CALHAS, RALOS E SISTEMA DE DRENAGEM",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\INSPEÇÃO E LIMPEZA DE CALHAS, RALOS E SISTEMA DE DRENAGEM.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\INSPEÇÃO E LIMPEZA DE CALHAS, RALOS E SISTEMA DE DRENAGEM.docx"
+        },
+        {
+            "name": "INSPEÇÃO E MANUTENÇÃO DE BOMBAS E RESERVATÓRIOS DE ÁGUA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\INSPEÇÃO E MANUTENÇÃO DE BOMBAS E RESERVATÓRIOS DE ÁGUA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\INSPEÇÃO E MANUTENÇÃO DE BOMBAS E RESERVATÓRIOS DE ÁGUA.docx"
+        },
+        {
+            "name": "MANUTENÇÃO DE INTERFONES E SISTEMAS DE COMUNICAÇÃO INTERNA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUTENÇÃO DE INTERFONES E SISTEMAS DE COMUNICAÇÃO INTERNA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\MANUTENÇÃO DE INTERFONES E SISTEMAS DE COMUNICAÇÃO INTERNA.docx"
+        },
+        {
+            "name": "MANUTENÇÃO DE PORTÕES AUTOMÁTICOS E CANCELAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUTENÇÃO DE PORTÕES AUTOMÁTICOS E CANCELAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\MANUTENÇÃO DE PORTÕES AUTOMÁTICOS E CANCELAS.docx"
+        },
+        {
+            "name": "MANUTENÇÃO E TESTE DO GERADOR DE ENERGIA (SE HOUVER)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUTENÇÃO E TESTE DO GERADOR DE ENERGIA (SE HOUVER).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\MANUTENÇÃO E TESTE DO GERADOR DE ENERGIA (SE HOUVER).docx"
+        },
+        {
+            "name": "MANUTENÇÃO ELÉTRICA E HIDRÁULICA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\MANUTENÇÃO ELÉTRICA E HIDRÁULICA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\MANUTENÇÃO ELÉTRICA E HIDRÁULICA.docx"
+        },
+        {
+            "name": "ORGANIZAÇÃO E LIMPEZA DA CASA DE MÁQUINAS (ELEVADORES E BOMBAS)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ORGANIZAÇÃO E LIMPEZA DA CASA DE MÁQUINAS (ELEVADORES E BOMBAS).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\ORGANIZAÇÃO E LIMPEZA DA CASA DE MÁQUINAS (ELEVADORES E BOMBAS).docx"
+        },
+        {
+            "name": "TESTES PERIÓDICOS EM ALARMES DE INCÊNDIO E SENSORES DE FUMAÇA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\TESTES PERIÓDICOS EM ALARMES DE INCÊNDIO E SENSORES DE FUMAÇA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\TESTES PERIÓDICOS EM ALARMES DE INCÊNDIO E SENSORES DE FUMAÇA.docx"
+        },
+        {
+            "name": "VERIFICAÇÃO DE ILUMINAÇÃO EXTERNA E INTERNA DAS ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VERIFICAÇÃO DE ILUMINAÇÃO EXTERNA E INTERNA DAS ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\VERIFICAÇÃO DE ILUMINAÇÃO EXTERNA E INTERNA DAS ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "VERIFICAÇÃO E LIMPEZA DE PAINÉIS SOLARES (SE HOUVER)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VERIFICAÇÃO E LIMPEZA DE PAINÉIS SOLARES (SE HOUVER).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\VERIFICAÇÃO E LIMPEZA DE PAINÉIS SOLARES (SE HOUVER).docx"
+        },
+        {
+            "name": "VERIFICAÇÃO PERIÓDICA DE ELEVADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VERIFICAÇÃO PERIÓDICA DE ELEVADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\VERIFICAÇÃO PERIÓDICA DE ELEVADORES.docx"
+        },
+        {
+            "name": "VISTORIA DE FACHADAS E ESTRUTURAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VISTORIA DE FACHADAS E ESTRUTURAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\VISTORIA DE FACHADAS E ESTRUTURAS.docx"
+        },
+        {
+            "name": "VISTORIA E MANUTENÇÃO DE MOBILIÁRIO DAS ÁREAS COMUNS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VISTORIA E MANUTENÇÃO DE MOBILIÁRIO DAS ÁREAS COMUNS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\VISTORIA E MANUTENÇÃO DE MOBILIÁRIO DAS ÁREAS COMUNS.docx"
+        },
+        {
+            "name": "VISTORIA PREVENTIVA DE EXTINTORES E SISTEMAS DE COMBATE A INCÊNDIO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VISTORIA PREVENTIVA DE EXTINTORES E SISTEMAS DE COMBATE A INCÊNDIO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\MANUTENÇÃO PREDIAL\\VISTORIA PREVENTIVA DE EXTINTORES E SISTEMAS DE COMBATE A INCÊNDIO.docx"
+        }
+    ],
+    "PORTARIA E SEGURANÇA": [
+        {
+            "name": "ABORDAGEM EM SITUAÇÕES DE TENTATIVA DE INVASÃO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ABORDAGEM EM SITUAÇÕES DE TENTATIVA DE INVASÃO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\ABORDAGEM EM SITUAÇÕES DE TENTATIVA DE INVASÃO.docx"
+        },
+        {
+            "name": "ACIONAMENTO DAS AUTORIDADES EM CASO DE SUSPEITAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ACIONAMENTO DAS AUTORIDADES EM CASO DE SUSPEITAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\ACIONAMENTO DAS AUTORIDADES EM CASO DE SUSPEITAS.docx"
+        },
+        {
+            "name": "ACIONAMENTO DO SÍNDICO OU ZELADOR FORA DO HORÁRIO COMERCIAL",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ACIONAMENTO DO SÍNDICO OU ZELADOR FORA DO HORÁRIO COMERCIAL.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\ACIONAMENTO DO SÍNDICO OU ZELADOR FORA DO HORÁRIO COMERCIAL.docx"
+        },
+        {
+            "name": "CHECAGEM DE IDENTIDADE COM DOCUMENTOS OFICIAIS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CHECAGEM DE IDENTIDADE COM DOCUMENTOS OFICIAIS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\CHECAGEM DE IDENTIDADE COM DOCUMENTOS OFICIAIS.docx"
+        },
+        {
+            "name": "CONTROLE DE ACESSO DE MORADORES, VISITANTES E PRESTADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE ACESSO DE MORADORES, VISITANTES E PRESTADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\CONTROLE DE ACESSO DE MORADORES, VISITANTES E PRESTADORES.docx"
+        },
+        {
+            "name": "CONTROLE DE ENTRADA DE ENTREGADORES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE ENTRADA DE ENTREGADORES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\CONTROLE DE ENTRADA DE ENTREGADORES.docx"
+        },
+        {
+            "name": "CONTROLE DE MUDANÇAS (ENTRADA E SAÍDA DE MORADORES)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE MUDANÇAS (ENTRADA E SAÍDA DE MORADORES).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\CONTROLE DE MUDANÇAS (ENTRADA E SAÍDA DE MORADORES).docx"
+        },
+        {
+            "name": "CONTROLE DE VAGAS DE GARAGEM",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\CONTROLE DE VAGAS DE GARAGEM.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\CONTROLE DE VAGAS DE GARAGEM.docx"
+        },
+        {
+            "name": "ENTREGA E RECEBIMENTO DE CHAVES E CONTROLE DE CÓPIAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\ENTREGA E RECEBIMENTO DE CHAVES E CONTROLE DE CÓPIAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\ENTREGA E RECEBIMENTO DE CHAVES E CONTROLE DE CÓPIAS.docx"
+        },
+        {
+            "name": "FECHAMENTO E ABERTURA DOS PORTÕES PRINCIPAIS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\FECHAMENTO E ABERTURA DOS PORTÕES PRINCIPAIS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\FECHAMENTO E ABERTURA DOS PORTÕES PRINCIPAIS.docx"
+        },
+        {
+            "name": "IDENTIFICAÇÃO E REGISTRO DE VISITANTES",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\IDENTIFICAÇÃO E REGISTRO DE VISITANTES.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\IDENTIFICAÇÃO E REGISTRO DE VISITANTES.docx"
+        },
+        {
+            "name": "INSTRUÇÃO AO PORTEIRO PARA LIDAR COM CONDÔMINOS AGRESSIVOS OU EMBRIAGADOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\INSTRUÇÃO AO PORTEIRO PARA LIDAR COM CONDÔMINOS AGRESSIVOS OU EMBRIAGADOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\INSTRUÇÃO AO PORTEIRO PARA LIDAR COM CONDÔMINOS AGRESSIVOS OU EMBRIAGADOS.docx"
+        },
+        {
+            "name": "PROCEDIMENTOS EM SITUAÇÕES DE EMERGÊNCIA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\PROCEDIMENTOS EM SITUAÇÕES DE EMERGÊNCIA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\PROCEDIMENTOS EM SITUAÇÕES DE EMERGÊNCIA.docx"
+        },
+        {
+            "name": "RECEBIMENTO DE MERCADORIAS DE GRANDE PORTE",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\RECEBIMENTO DE MERCADORIAS DE GRANDE PORTE.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\RECEBIMENTO DE MERCADORIAS DE GRANDE PORTE.docx"
+        },
+        {
+            "name": "RECEBIMENTO E CONTROLE DE CONTROLE REMOTO DE GARAGEM",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\RECEBIMENTO E CONTROLE DE CONTROLE REMOTO DE GARAGEM.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\RECEBIMENTO E CONTROLE DE CONTROLE REMOTO DE GARAGEM.docx"
+        },
+        {
+            "name": "REGISTRO E ARQUIVAMENTO DOS EVENTOS EM LIVRO DE OCORRÊNCIAS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\REGISTRO E ARQUIVAMENTO DOS EVENTOS EM LIVRO DE OCORRÊNCIAS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\REGISTRO E ARQUIVAMENTO DOS EVENTOS EM LIVRO DE OCORRÊNCIAS.docx"
+        },
+        {
+            "name": "RETENÇÃO E CONFERÊNCIA DE AUTORIZAÇÃO DE ENTRADA DE PRESTADORES AUTÔNOMOS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\RETENÇÃO E CONFERÊNCIA DE AUTORIZAÇÃO DE ENTRADA DE PRESTADORES AUTÔNOMOS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\RETENÇÃO E CONFERÊNCIA DE AUTORIZAÇÃO DE ENTRADA DE PRESTADORES AUTÔNOMOS.docx"
+        },
+        {
+            "name": "RONDAS E VIGILÂNCIA INTERNA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\RONDAS E VIGILÂNCIA INTERNA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\RONDAS E VIGILÂNCIA INTERNA.docx"
+        },
+        {
+            "name": "TROCA DE TURNOS ENTRE PORTEIROS",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\TROCA DE TURNOS ENTRE PORTEIROS.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\TROCA DE TURNOS ENTRE PORTEIROS.docx"
+        },
+        {
+            "name": "USO DE EQUIPAMENTOS DE SEGURANÇA (CFTV, INTERFONE, ALARMES)",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\USO DE EQUIPAMENTOS DE SEGURANÇA (CFTV, INTERFONE, ALARMES).pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\USO DE EQUIPAMENTOS DE SEGURANÇA (CFTV, INTERFONE, ALARMES).docx"
+        },
+        {
+            "name": "VERIFICAÇÃO DO FUNCIONAMENTO DAS CÂMERAS DE SEGURANÇA",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VERIFICAÇÃO DO FUNCIONAMENTO DAS CÂMERAS DE SEGURANÇA.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\VERIFICAÇÃO DO FUNCIONAMENTO DAS CÂMERAS DE SEGURANÇA.docx"
+        },
+        {
+            "name": "VISTORIA DE ÁREAS DE RISCO",
+            "type": "doc",
+            "pdf_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\telegram_bot\\data\\pdfs\\VISTORIA DE ÁREAS DE RISCO.pdf",
+            "docx_path": "c:\\Users\\andre\\Desktop\\agente_facilities\\FICHAS DIGITAIS CONDOMINIO\\POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)\\PORTARIA E SEGURANÇA\\VISTORIA DE ÁREAS DE RISCO.docx"
+        }
+    ],
+    "TREINAMENTOS - LIMPEZA": [
+        {
+            "name": "Limpeza Geral",
+            "type": "video",
+            "url": "https://www.youtube.com/watch?v=TLTZnL9L74Y"
+        }
+    ]
+}
