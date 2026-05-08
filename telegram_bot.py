@@ -233,6 +233,60 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     else:
         await waiting_msg.edit_text("❌ Desculpe, a Inteligência Artificial ainda não está configurada ou a base de dados não foi carregada.")
 
+async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle voice messages: STT -> Agent -> TTS."""
+    voice = update.message.voice
+    
+    # Criar pasta temp se não existir
+    temp_dir = os.path.join(os.path.dirname(__file__), "temp")
+    os.makedirs(temp_dir, exist_ok=True)
+    
+    # Notifica o usuário
+    status_msg = await update.message.reply_text("🎤 Ouvindo seu áudio...")
+    
+    try:
+        # 1. Download do áudio (.ogg)
+        file = await context.bot.get_file(voice.file_id)
+        input_path = os.path.join(temp_dir, f"voice_{voice.file_id}.ogg")
+        await file.download_to_drive(input_path)
+        
+        if agent and agent.ready:
+            # 2. Transcrição (STT)
+            await status_msg.edit_text("✍️ Transcrevendo áudio...")
+            transcription = agent.stt(input_path)
+            
+            if not transcription:
+                await status_msg.edit_text("❌ Não consegui entender o áudio. Por favor, tente falar mais claro ou digite sua pergunta.")
+                return
+
+            # 3. Processar pergunta (RAG)
+            await status_msg.edit_text(f"🔍 Buscando resposta para: _{transcription}_", parse_mode="Markdown")
+            answer = agent.ask(transcription)
+            
+            # 4. Síntese de Voz (TTS)
+            await status_msg.edit_text("🗣️ Gerando resposta em áudio...")
+            output_path = os.path.join(temp_dir, f"reply_{voice.file_id}.mp3")
+            success = agent.tts(answer, output_path)
+            
+            if success:
+                # Enviar áudio de volta
+                await update.message.reply_voice(voice=open(output_path, "rb"), caption=f"📝 *Transcrição:* {answer[:100]}...", parse_mode="Markdown")
+                await status_msg.delete()
+            else:
+                # Fallback para texto se o TTS falhar
+                await status_msg.edit_text(answer)
+            
+            # Limpeza de arquivos temporários
+            if os.path.exists(input_path): os.remove(input_path)
+            if os.path.exists(output_path): os.remove(output_path)
+            
+        else:
+            await status_msg.edit_text("❌ A Inteligência Artificial não está disponível no momento.")
+            
+    except Exception as e:
+        logger.error(f"Erro ao processar voz: {e}")
+        await status_msg.edit_text(f"❌ Ocorreu um erro ao processar seu áudio.")
+
 async def post_init(application: Application) -> None:
     """Set bot commands in the UI menu."""
     commands = [
@@ -333,6 +387,7 @@ def main() -> None:
     application.add_handler(CommandHandler("ajuda", start))
     application.add_handler(CallbackQueryHandler(button_callback))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    application.add_handler(MessageHandler(filters.VOICE, handle_voice))
 
     print("Bot do Telegram Iniciado com sucesso! Pressione Ctrl+C para parar.")
     

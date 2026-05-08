@@ -53,4 +53,31 @@ class AIAgent:
         except Exception as e:
             return f"Ocorreu um erro ao processar sua pergunta: {e}"
 
+    def stt(self, audio_file_path: str) -> str:
+        """Speech to Text usando Whisper."""
+        try:
+            with open(audio_file_path, "rb") as audio_file:
+                transcript = self.client.audio.transcriptions.create(
+                    model="whisper-1", 
+                    file=audio_file
+                )
+            return transcript.text
+        except Exception as e:
+            print(f"Erro no STT: {e}")
+            return ""
+
+    def tts(self, text: str, output_path: str):
+        """Text to Speech usando OpenAI TTS."""
+        try:
+            response = self.client.audio.speech.create(
+                model="tts-1",
+                voice="alloy",
+                input=text
+            )
+            response.stream_to_file(output_path)
+            return True
+        except Exception as e:
+            print(f"Erro no TTS: {e}")
+            return False
+
 agent = AIAgent()

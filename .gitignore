@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+data/pdfs/
+data/faiss_index/
+venv/
+.vscode/
