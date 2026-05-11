@@ -10,7 +10,7 @@ async def check_connectivity():
     urls = [
         "https://api.telegram.org",
         "https://www.google.com",
-        "https://api.openai.com"
+        "https://generativelanguage.googleapis.com"
     ]
     
     async with httpx.AsyncClient(timeout=10.0) as client:

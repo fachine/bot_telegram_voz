@@ -322,7 +322,7 @@ def run_health_check():
 
 def check_network():
     """Verifica a conectividade básica usando múltiplos métodos."""
-    targets = ["api.telegram.org", "www.google.com", "api.openai.com"]
+    targets = ["api.telegram.org", "www.google.com", "generativelanguage.googleapis.com"]
     
     for target in targets:
         # Teste 1: DNS (Resolução de nome)

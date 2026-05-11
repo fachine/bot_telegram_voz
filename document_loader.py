@@ -6,7 +6,7 @@ import subprocess
 from docx2pdf import convert
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from dotenv import load_dotenv
 
@@ -130,8 +130,34 @@ def process_documents():
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         splits = text_splitter.split_documents(docs)
         
-        embeddings = OpenAIEmbeddings()
-        vectorstore = FAISS.from_documents(splits, embeddings)
+        embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+        
+        # Processar em lotes moderados para evitar erro 429 (RESOURCE_EXHAUSTED)
+        batch_size = 10
+        vectorstore = None
+        
+        print(f"Processando {len(splits)} chunks em lotes de {batch_size}...")
+        i = 0
+        while i < len(splits):
+            batch = splits[i:i + batch_size]
+            try:
+                if vectorstore is None:
+                    vectorstore = FAISS.from_documents(batch, embeddings)
+                else:
+                    vectorstore.add_documents(batch)
+                
+                print(f"Lote {i//batch_size + 1}/{(len(splits)-1)//batch_size + 1} concluído.")
+                i += batch_size
+                import time
+                time.sleep(5) # Espera 5 segundos entre lotes
+            except Exception as e:
+                if "429" in str(e):
+                    print("Limite atingido (429), esperando 60 segundos...")
+                    import time
+                    time.sleep(60)
+                else:
+                    raise e
+            
         vectorstore.save_local(os.path.join(OUTPUT_DIR, "faiss_index"))
         print("VectorStore salvo com sucesso!")
     else:

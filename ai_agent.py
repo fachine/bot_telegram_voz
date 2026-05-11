@@ -1,10 +1,14 @@
 import os
-from langchain_openai import OpenAIEmbeddings
+import google.generativeai as genai
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from openai import OpenAI
+from gtts import gTTS
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Configuração do Google GenAI SDK (necessário para STT multimodal)
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 FAISS_INDEX_PATH = os.path.join(OUTPUT_DIR, "faiss_index")
@@ -12,10 +16,27 @@ FAISS_INDEX_PATH = os.path.join(OUTPUT_DIR, "faiss_index")
 class AIAgent:
     def __init__(self):
         try:
-            self.embeddings = OpenAIEmbeddings()
-            self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, self.embeddings, allow_dangerous_deserialization=True)
-            self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 4})
-            self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+            # Embeddings do Google
+            self.embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+            
+            # Carregar o índice FAISS (necessita ter sido criado com embeddings do Google)
+            if os.path.exists(FAISS_INDEX_PATH):
+                self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, self.embeddings, allow_dangerous_deserialization=True)
+                self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 4})
+            else:
+                print("Aviso: Índice FAISS não encontrado. Execute document_loader.py primeiro.")
+                self.retriever = None
+            
+            # Chat model do Google
+            self.model = ChatGoogleGenerativeAI(
+                model="gemini-1.5-flash",
+                temperature=0.2,
+                google_api_key=os.getenv("GOOGLE_API_KEY")
+            )
+            
+            # Modelo para STT (usando o SDK direto do Google)
+            self.genai_model = genai.GenerativeModel("gemini-1.5-flash")
+            
             self.ready = True
         except Exception as e:
             print(f"Erro ao inicializar IA: {e}")
@@ -23,12 +44,14 @@ class AIAgent:
 
     def ask(self, question: str) -> str:
         if not self.ready:
-            return "Desculpe, a base de conhecimento ainda não foi processada ou a IA não está configurada corretamente."
+            return "Desculpe, a IA não está configurada corretamente ou a base de conhecimento não foi processada."
         
         try:
-            # 1. Recuperar contexto do FAISS
-            docs = self.retriever.invoke(question)
-            context = "\n\n---\n\n".join([doc.page_content for doc in docs])
+            context = ""
+            if self.retriever:
+                # 1. Recuperar contexto do FAISS
+                docs = self.retriever.invoke(question)
+                context = "\n\n---\n\n".join([doc.page_content for doc in docs])
             
             # 2. Prompt do sistema
             system_prompt = (
@@ -39,45 +62,44 @@ class AIAgent:
                 f"Contexto:\n{context}"
             )
             
-            # 3. Chamar OpenAI
-            response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": question}
-                ],
-                temperature=0.2
-            )
+            # 3. Chamar Gemini
+            response = self.model.invoke([
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": question}
+            ])
             
-            return response.choices[0].message.content
+            return response.content
         except Exception as e:
             return f"Ocorreu um erro ao processar sua pergunta: {e}"
 
     def stt(self, audio_file_path: str) -> str:
-        """Speech to Text usando Whisper."""
+        """Speech to Text usando Gemini 1.5 Flash (Multimodal)."""
         try:
-            with open(audio_file_path, "rb") as audio_file:
-                transcript = self.client.audio.transcriptions.create(
-                    model="whisper-1", 
-                    file=audio_file
-                )
-            return transcript.text
+            # Upload do arquivo para o Google (temporário)
+            audio_file = genai.upload_file(path=audio_file_path)
+            
+            # Gerar transcrição
+            response = self.genai_model.generate_content([
+                audio_file, 
+                "Por favor, transcreva este áudio exatamente como dito, sem adicionar comentários."
+            ])
+            
+            # Deletar o arquivo do servidor do Google após o uso
+            genai.delete_file(audio_file.name)
+            
+            return response.text
         except Exception as e:
-            print(f"Erro no STT: {e}")
+            print(f"Erro no STT (Gemini): {e}")
             return ""
 
     def tts(self, text: str, output_path: str):
-        """Text to Speech usando OpenAI TTS."""
+        """Text to Speech usando gTTS (Google Text-to-Speech)."""
         try:
-            response = self.client.audio.speech.create(
-                model="tts-1",
-                voice="alloy",
-                input=text
-            )
-            response.stream_to_file(output_path)
+            tts = gTTS(text=text, lang='pt', slow=False)
+            tts.save(output_path)
             return True
         except Exception as e:
-            print(f"Erro no TTS: {e}")
+            print(f"Erro no TTS (gTTS): {e}")
             return False
 
 agent = AIAgent()
