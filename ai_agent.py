@@ -28,27 +28,32 @@ class AIAgent:
                 self.retriever = None
             
             # Chat model do Google
+            print("Inicializando ChatGoogleGenerativeAI...")
             self.model = ChatGoogleGenerativeAI(
-                model="gemini-1.5-flash",
+                model="gemini-2.5-flash",
                 temperature=0.2,
                 google_api_key=os.getenv("GOOGLE_API_KEY")
             )
             
             # Modelo para STT (usando o SDK direto do Google)
-            self.genai_model = genai.GenerativeModel("gemini-1.5-flash")
+            print("Inicializando GenerativeModel para STT...")
+            self.genai_model = genai.GenerativeModel("gemini-2.5-flash")
             
             self.ready = True
+            print("AIAgent pronto!")
         except Exception as e:
             print(f"Erro ao inicializar IA: {e}")
             self.ready = False
 
     def ask(self, question: str) -> str:
+        print(f"Recebendo pergunta: {question}")
         if not self.ready:
             return "Desculpe, a IA não está configurada corretamente ou a base de conhecimento não foi processada."
         
         try:
             context = ""
             if self.retriever:
+                print("Recuperando contexto...")
                 # 1. Recuperar contexto do FAISS
                 docs = self.retriever.invoke(question)
                 context = "\n\n---\n\n".join([doc.page_content for doc in docs])
@@ -63,30 +68,37 @@ class AIAgent:
             )
             
             # 3. Chamar Gemini
+            print("Chamando modelo Gemini...")
             response = self.model.invoke([
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": question}
             ])
-            
+            print("Resposta recebida!")
             return response.content
         except Exception as e:
             return f"Ocorreu um erro ao processar sua pergunta: {e}"
 
     def stt(self, audio_file_path: str) -> str:
-        """Speech to Text usando Gemini 1.5 Flash (Multimodal)."""
+        """Speech to Text usando Gemini (Multimodal)."""
+        print(f"Iniciando STT para arquivo: {audio_file_path}")
         try:
             # Upload do arquivo para o Google (temporário)
+            print("Fazendo upload do arquivo para o Google...")
             audio_file = genai.upload_file(path=audio_file_path)
+            print(f"Upload concluído: {audio_file.name}")
             
             # Gerar transcrição
+            print("Solicitando transcrição ao Gemini...")
             response = self.genai_model.generate_content([
                 audio_file, 
                 "Por favor, transcreva este áudio exatamente como dito, sem adicionar comentários."
             ])
             
             # Deletar o arquivo do servidor do Google após o uso
+            print("Limpando arquivo do servidor...")
             genai.delete_file(audio_file.name)
             
+            print(f"Transcrição concluída: {response.text}")
             return response.text
         except Exception as e:
             print(f"Erro no STT (Gemini): {e}")
@@ -94,9 +106,11 @@ class AIAgent:
 
     def tts(self, text: str, output_path: str):
         """Text to Speech usando gTTS (Google Text-to-Speech)."""
+        print(f"Iniciando TTS para texto: {text[:50]}...")
         try:
             tts = gTTS(text=text, lang='pt', slow=False)
             tts.save(output_path)
+            print(f"Áudio salvo em: {output_path}")
             return True
         except Exception as e:
             print(f"Erro no TTS (gTTS): {e}")

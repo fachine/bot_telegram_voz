@@ -147,7 +147,7 @@ def process_documents():
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         splits = text_splitter.split_documents(docs)
         
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+        embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-2.5-flash")
         
         # Processar em lotes moderados para evitar erro 429 (RESOURCE_EXHAUSTED)
         batch_size = 10
