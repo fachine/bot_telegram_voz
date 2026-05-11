@@ -260,21 +260,28 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
                 return
 
             # 3. Processar pergunta (RAG)
-            await status_msg.edit_text(f"🔍 Buscando resposta para: _{transcription}_", parse_mode="Markdown")
+            await status_msg.edit_text(f"🔍 Buscando resposta...")
             answer = agent.ask(transcription)
             
+            # Enviar a resposta em texto primeiro (garante que o usuário receba a informação)
+            await update.message.reply_text(f"📝 *Resposta:* \n\n{answer}", parse_mode="Markdown")
+
             # 4. Síntese de Voz (TTS)
             await status_msg.edit_text("🗣️ Gerando resposta em áudio...")
             output_path = os.path.join(temp_dir, f"reply_{voice.file_id}.mp3")
+            
+            print(f"Tentando gerar áudio TTS em: {output_path}")
             success = agent.tts(answer, output_path)
             
-            if success:
+            if success and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
                 # Enviar áudio de volta
-                await update.message.reply_voice(voice=open(output_path, "rb"), caption=f"📝 *Transcrição:* {answer[:100]}...", parse_mode="Markdown")
+                print(f"Enviando áudio de volta para o usuário... Tamanho: {os.path.getsize(output_path)} bytes")
+                with open(output_path, "rb") as audio_file:
+                    await update.message.reply_voice(voice=audio_file, caption="Ouça a resposta acima 👆")
                 await status_msg.delete()
             else:
-                # Fallback para texto se o TTS falhar
-                await status_msg.edit_text(answer)
+                print(f"Falha no TTS ou arquivo vazio. Sucesso: {success}")
+                await status_msg.edit_text("⚠️ Não consegui gerar o áudio, mas enviei a resposta em texto acima.")
             
             # Limpeza de arquivos temporários
             if os.path.exists(input_path): os.remove(input_path)
