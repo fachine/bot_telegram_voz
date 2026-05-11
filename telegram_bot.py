@@ -45,21 +45,49 @@ except ImportError:
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /start is issued."""
     welcome_message = (
-        "Olá! Sou o Assistente Virtual do Condomínio. 🏢\n\n"
-        "Posso te ajudar a encontrar documentos e Treinamentos.\n"
-        "Escolha uma opção abaixo ou digite sua pergunta:"
+        "✨ *Bem-vindo ao Assistente DWR7!* 🏢\n\n"
+        "Sou sua Inteligência Artificial para suporte em *RH e Operações*.\n\n"
+        "💡 *Como posso ajudar?*\n"
+        "• Digite sua dúvida ou mande um áudio 🎤\n"
+        "• Explore as categorias abaixo para ver POPs e documentos:\n"
+        "━━━━━━━━━━━━━━━━━━━━"
     )
     
+    # Criar botões de categorias (organizados em 2 colunas)
     keyboard = []
-    # Categorias normais (que não são treinamentos)
-    for category in sorted(MENU_DATA.keys()):
-        if not category.startswith("TREINAMENTOS"):
-            keyboard.append([InlineKeyboardButton(f"📂 {category}", callback_data=f"cat_{category}")])
+    current_row = []
     
-    # Adicionar o botão de TREINAMENTOS se houver algo neles
+    # Mapeamento de emojis para categorias comuns
+    category_emojis = {
+        "CONTRATOS": "📜",
+        "FORMULÁRIOS E FICHAS": "📝",
+        "MANUAIS E REGRAS": "📘",
+        "POPS (PROCEDIMENTOS OPERACIONAIS PADRAO)": "⚙️",
+        "LIMPEZA": "🧹",
+        "MANUTENÇÃO": "🛠️",
+        "SEGURANÇA": "🛡️",
+        "JARDINAGEM": "🌿"
+    }
+
+    # Categorias normais
+    categories = [c for c in sorted(MENU_DATA.keys()) if not c.startswith("TREINAMENTOS")]
+    
+    for category in categories:
+        emoji = category_emojis.get(category.upper(), "📂")
+        button = InlineKeyboardButton(f"{emoji} {category}", callback_data=f"cat_{category}")
+        current_row.append(button)
+        
+        if len(current_row) == 2:
+            keyboard.append(current_row)
+            current_row = []
+            
+    if current_row:
+        keyboard.append(current_row)
+    
+    # Adicionar o botão de TREINAMENTOS em destaque (linha única)
     has_trainings = any(c.startswith("TREINAMENTOS") for c in MENU_DATA.keys())
     if has_trainings:
-        keyboard.append([InlineKeyboardButton("🎓 TREINAMENTOS", callback_data="train_menu")])
+        keyboard.append([InlineKeyboardButton("🎓 ACESSAR TREINAMENTOS", callback_data="train_menu")])
         
     reply_markup = InlineKeyboardMarkup(keyboard)
     # Sistema de retentativa para lidar com a rede instável do Hugging Face
@@ -67,9 +95,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     for attempt in range(max_retries):
         try:
             if update.message:
-                await update.message.reply_text(welcome_message, reply_markup=reply_markup)
+                await update.message.reply_text(welcome_message, reply_markup=reply_markup, parse_mode="Markdown")
             else:
-                await update.callback_query.edit_message_text(welcome_message, reply_markup=reply_markup)
+                await update.callback_query.edit_message_text(welcome_message, reply_markup=reply_markup, parse_mode="Markdown")
             return # Sucesso!
         except Exception as e:
             if attempt == max_retries - 1:
@@ -90,17 +118,29 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         
     elif data == "train_menu":
         keyboard = []
-        # Garantir que as 4 áreas principais sempre apareçam
-        training_areas = ["LIMPEZA", "MANUTENÇÃO", "SEGURANÇA", "JARDINAGEM"]
+        # Garantir que as 4 áreas principais sempre apareçam em 2 colunas
+        training_areas = [
+            ("🧹 LIMPEZA", "LIMPEZA"),
+            ("🛠️ MANUTENÇÃO", "MANUTENÇÃO"),
+            ("🛡️ SEGURANÇA", "SEGURANÇA"),
+            ("🌿 JARDINAGEM", "JARDINAGEM")
+        ]
         
-        for area in training_areas:
-            # O callback_data precisa bater com o que o document_loader gera
+        row = []
+        for label, area in training_areas:
             category_name = f"TREINAMENTOS - {area}"
-            keyboard.append([InlineKeyboardButton(area, callback_data=f"cat_{category_name}")])
+            row.append(InlineKeyboardButton(label, callback_data=f"cat_{category_name}"))
+            if len(row) == 2:
+                keyboard.append(row)
+                row = []
         
-        keyboard.append([InlineKeyboardButton("🔙 Voltar ao Menu Principal", callback_data="main_menu")])
+        keyboard.append([InlineKeyboardButton("🔙 VOLTAR AO MENU PRINCIPAL", callback_data="main_menu")])
         reply_markup = InlineKeyboardMarkup(keyboard)
-        await query.edit_message_text(text="🎓 *Áreas de Treinamento*\n\nSelecione a área desejada:", parse_mode="Markdown", reply_markup=reply_markup)
+        await query.edit_message_text(
+            text="🎓 *Academia de Treinamentos*\n\nSelecione a especialidade operacional para ver os vídeos de treinamento:", 
+            parse_mode="Markdown", 
+            reply_markup=reply_markup
+        )
         
     elif data.startswith("cat_"):
         category = data[4:]
@@ -108,31 +148,25 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         keyboard = []
         
         if not docs:
-            msg_text = f"Área: *{category}*\n\n📭 Ainda não há arquivos ou treinamentos cadastrados nesta área."
+            msg_text = f"Área: *{category}*\n\n━━━━━━━━━━━━━━━━━━━━\n📭 Ainda não há arquivos cadastrados."
         else:
-            # Como o callback_data tem limite de 64 bytes, vamos usar o índice do documento na lista
             for i, doc in enumerate(docs):
                 doc_name = doc["name"]
-                # Limitar tamanho do nome no botão se for muito grande
                 btn_text = doc_name[:40] + "..." if len(doc_name) > 40 else doc_name
                 
-                # Se for vídeo, o botão abre o link diretamente
                 if doc.get("type") == "video":
-                    keyboard.append([InlineKeyboardButton(f"▶️ {btn_text}", url=doc.get("url", ""))])
+                    keyboard.append([InlineKeyboardButton(f"▶️ ASSISTIR: {btn_text}", url=doc.get("url", ""))])
                 else:
-                    keyboard.append([InlineKeyboardButton(f"📄 {btn_text}", callback_data=f"doc_{category}_{i}")])
+                    keyboard.append([InlineKeyboardButton(f"📄 VER: {btn_text}", callback_data=f"doc_{category}_{i}")])
             
-            msg_text = f"Área: *{category}*\n\nSelecione um documento:"
-            if "TREINAMENTO" in category.upper():
-                msg_text = f"Área: *{category}*\n\nSelecione um treinamento em vídeo:"
+            msg_text = f"📁 *Área: {category}*\n\nSelecione o item desejado para visualizar:"
             
         back_callback = "main_menu"
         if category.startswith("TREINAMENTOS"):
             back_callback = "train_menu"
             
-        keyboard.append([InlineKeyboardButton("🔙 Voltar", callback_data=back_callback)])
+        keyboard.append([InlineKeyboardButton("🔙 VOLTAR", callback_data=back_callback)])
         reply_markup = InlineKeyboardMarkup(keyboard)
-            
         await query.edit_message_text(text=msg_text, parse_mode="Markdown", reply_markup=reply_markup)
         
     elif data.startswith("doc_"):
