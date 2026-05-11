@@ -3,6 +3,8 @@ import glob
 import json
 import platform
 import subprocess
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from docx2pdf import convert
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -11,6 +13,21 @@ from langchain_community.vectorstores import FAISS
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Servidor básico para o Health Check do Render/Hugging Face
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Loader is Running")
+    def log_message(self, format, *args):
+        return
+
+def run_health_check():
+    port = int(os.environ.get("PORT", 7860))
+    server = HTTPServer(('0.0.0.0', port), HealthCheckHandler)
+    print(f"Health Check Server do Loader rodando na porta {port}")
+    server.serve_forever()
 
 # Caminhos configuráveis (ajusta automaticamente entre Windows local e Linux servidor)
 BASE_DIR = os.getenv("DOCS_PATH", r"c:\Users\andre\Desktop\agente_facilities\telegram_bot\FICHAS DIGITAIS CONDOMINIO")
@@ -164,4 +181,6 @@ def process_documents():
         print("Nenhum documento processado para o VectorStore.")
 
 if __name__ == "__main__":
+    # Iniciar servidor de saúde em uma thread separada para o Render não dar timeout
+    threading.Thread(target=run_health_check, daemon=True).start()
     process_documents()
