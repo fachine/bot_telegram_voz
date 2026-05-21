@@ -312,7 +312,7 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
                 # Enviar áudio de volta
                 print(f"Enviando áudio de volta para o usuário... Tamanho: {os.path.getsize(output_path)} bytes")
                 with open(output_path, "rb") as audio_file:
-                    await update.message.reply_voice(voice=audio_file, caption="Ouça a resposta acima 👆")
+                    await update.message.reply_audio(audio=audio_file, caption="Ouça a resposta acima 👆")
                 await status_msg.delete()
             else:
                 print(f"Falha no TTS ou arquivo vazio. Sucesso: {success}")
