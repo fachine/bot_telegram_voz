@@ -30,7 +30,7 @@ def run_health_check():
     server.serve_forever()
 
 # Caminhos configuráveis (ajusta automaticamente entre Windows local e Linux servidor)
-BASE_DIR = os.getenv("DOCS_PATH", r"c:\Users\andre\Desktop\agente_facilities\telegram_bot\FICHAS DIGITAIS CONDOMINIO")
+BASE_DIR = os.getenv("DOCS_PATH", r"c:\Users\andre\Desktop\agente_facilities voz\telegram_bot\FICHAS DIGITAIS CONDOMINIO")
 # Se o caminho absoluto não existir (no servidor), tenta o relativo dentro da pasta do bot
 if not os.path.exists(BASE_DIR):
     BASE_DIR = os.path.join(os.path.dirname(__file__), "FICHAS DIGITAIS CONDOMINIO")

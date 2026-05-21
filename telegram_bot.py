@@ -1,4 +1,5 @@
 import os
+import asyncio
 import json
 import logging
 import docx2txt
@@ -46,9 +47,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /start is issued."""
     welcome_message = (
         "✨ *Bem-vindo ao Assistente DWR7!* 🏢\n\n"
-        "Sou sua Inteligência Artificial para suporte em *RH e Operações*.\n\n"
+        "Sou sua Inteligência Artificial para suporte nas *Operações*.\n\n"
         "💡 *Como posso ajudar?*\n"
-        "• Digite sua dúvida ou mande um áudio 🎤\n"
         "• Explore as categorias abaixo para ver POPs e documentos:\n"
         "━━━━━━━━━━━━━━━━━━━━"
     )
@@ -157,7 +157,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
                 if doc.get("type") == "video":
                     keyboard.append([InlineKeyboardButton(f"▶️ ASSISTIR: {btn_text}", url=doc.get("url", ""))])
                 else:
-                    keyboard.append([InlineKeyboardButton(f"📄 VER: {btn_text}", callback_data=f"doc_{category}_{i}")])
+                    keyboard.append([InlineKeyboardButton(f"📄 VER: {btn_text}", callback_data=f"doc|{category}|{i}")])
             
             msg_text = f"📁 *Área: {category}*\n\nSelecione o item desejado para visualizar:"
             
@@ -169,8 +169,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         reply_markup = InlineKeyboardMarkup(keyboard)
         await query.edit_message_text(text=msg_text, parse_mode="Markdown", reply_markup=reply_markup)
         
-    elif data.startswith("doc_"):
-        parts = data.split("_", 2)
+    elif data.startswith("doc|"):
+        parts = data.split("|", 2)
         if len(parts) == 3:
             category = parts[1]
             doc_index = int(parts[2])
@@ -181,16 +181,16 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             
             text = f"📄 *{doc_name}*\n\nO que você deseja fazer?"
             keyboard = [
-                [InlineKeyboardButton("📖 Ler no Chat (Resumo IA)", callback_data=f"read_{category}_{doc_index}")],
-                [InlineKeyboardButton("📥 Baixar Documento (PDF)", callback_data=f"dl_{category}_{doc_index}")],
+                [InlineKeyboardButton("📖 Ler no Chat (Resumo IA)", callback_data=f"read|{category}|{doc_index}")],
+                [InlineKeyboardButton("📥 Baixar Documento (PDF)", callback_data=f"dl|{category}|{doc_index}")],
                 [InlineKeyboardButton("🔙 Voltar", callback_data=f"cat_{category}")],
                 [InlineKeyboardButton("🏠 Menu Principal", callback_data="main_menu")]
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
             await query.edit_message_text(text=text, parse_mode="Markdown", reply_markup=reply_markup)
             
-    elif data.startswith("dl_"):
-        parts = data.split("_", 2)
+    elif data.startswith("dl|"):
+        parts = data.split("|", 2)
         if len(parts) == 3:
             category = parts[1]
             doc_index = int(parts[2])
@@ -206,8 +206,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             else:
                 await context.bot.send_message(chat_id=query.message.chat_id, text="❌ Desculpe, o arquivo não foi encontrado no servidor.")
 
-    elif data.startswith("read_"):
-        parts = data.split("_", 2)
+    elif data.startswith("read|"):
+        parts = data.split("|", 2)
         if len(parts) == 3:
             category = parts[1]
             doc_index = int(parts[2])
@@ -278,10 +278,12 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     # Notifica o usuário
     status_msg = await update.message.reply_text("🎤 Ouvindo seu áudio...")
     
+    input_path = os.path.join(temp_dir, f"voice_{voice.file_id}.ogg")
+    output_path = os.path.join(temp_dir, f"reply_{voice.file_id}.mp3")
+
     try:
         # 1. Download do áudio (.ogg)
         file = await context.bot.get_file(voice.file_id)
-        input_path = os.path.join(temp_dir, f"voice_{voice.file_id}.ogg")
         await file.download_to_drive(input_path)
         
         if agent and agent.ready:
@@ -294,7 +296,7 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
                 return
 
             # 3. Processar pergunta (RAG)
-            await status_msg.edit_text(f"🔍 Buscando resposta...")
+            await status_msg.edit_text("🔍 Buscando resposta...")
             answer = agent.ask(transcription)
             
             # Enviar a resposta em texto primeiro (garante que o usuário receba a informação)
@@ -302,7 +304,6 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
             # 4. Síntese de Voz (TTS)
             await status_msg.edit_text("🗣️ Gerando resposta em áudio...")
-            output_path = os.path.join(temp_dir, f"reply_{voice.file_id}.mp3")
             
             print(f"Tentando gerar áudio TTS em: {output_path}")
             success = agent.tts(answer, output_path)
@@ -317,16 +318,18 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
                 print(f"Falha no TTS ou arquivo vazio. Sucesso: {success}")
                 await status_msg.edit_text("⚠️ Não consegui gerar o áudio, mas enviei a resposta em texto acima.")
             
-            # Limpeza de arquivos temporários
-            if os.path.exists(input_path): os.remove(input_path)
-            if os.path.exists(output_path): os.remove(output_path)
-            
         else:
             await status_msg.edit_text("❌ A Inteligência Artificial não está disponível no momento.")
             
     except Exception as e:
         logger.error(f"Erro ao processar voz: {e}")
-        await status_msg.edit_text(f"❌ Ocorreu um erro ao processar seu áudio.")
+        await status_msg.edit_text("❌ Ocorreu um erro ao processar seu áudio.")
+    finally:
+        # Limpeza garantida de arquivos temporários (mesmo em caso de erro)
+        if os.path.exists(input_path):
+            os.remove(input_path)
+        if os.path.exists(output_path):
+            os.remove(output_path)
 
 async def post_init(application: Application) -> None:
     """Set bot commands in the UI menu."""
