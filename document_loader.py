@@ -145,6 +145,7 @@ def process_documents():
     if len(docs) > 0:
         print(f"Criando VectorStore com {len(docs)} documentos base...")
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+        splits = text_splitter.split_documents(docs)
         api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
         if not api_key:
             print("ERRO CRÍTICO: Nenhuma chave API (GOOGLE_API_KEY ou GEMINI_API_KEY) encontrada no ambiente!")
