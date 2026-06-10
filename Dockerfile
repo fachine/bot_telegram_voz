@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN useradd -m -u 1000 user
 USER user
 ENV PATH="/home/user/.local/bin:$PATH"
+ENV PYTHONUNBUFFERED=1
 
 # Definir diretório de trabalho
 WORKDIR /home/user/app

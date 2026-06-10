@@ -8,7 +8,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from docx2pdf import convert
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from dotenv import load_dotenv
 
@@ -146,16 +146,17 @@ def process_documents():
         print(f"Criando VectorStore com {len(docs)} documentos base...")
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         splits = text_splitter.split_documents(docs)
-        api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+        api_key = os.getenv("OPENROUTER_API_KEY")
         if not api_key:
-            print("ERRO CRÍTICO: Nenhuma chave API (GOOGLE_API_KEY ou GEMINI_API_KEY) encontrada no ambiente!")
+            print("ERRO CRÍTICO: Nenhuma chave API (OPENROUTER_API_KEY) encontrada no ambiente!")
         else:
             masked_key = api_key[:4] + "*" * (len(api_key) - 4) if len(api_key) > 4 else "***"
-            print(f"Chave API encontrada: {masked_key} (Tamanho: {len(api_key)})")
+            print(f"Chave API OpenRouter encontrada: {masked_key} (Tamanho: {len(api_key)})")
             
-        embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/gemini-embedding-001",
-            google_api_key=api_key
+        embeddings = OpenAIEmbeddings(
+            openai_api_base="https://openrouter.ai/api/v1",
+            openai_api_key=api_key,
+            model="openai/text-embedding-3-small"
         )
         
         # Processar em lotes moderados para evitar erro 429 (RESOURCE_EXHAUSTED)

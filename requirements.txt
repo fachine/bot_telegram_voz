@@ -11,3 +11,6 @@ docx2txt
 google-generativeai
 gTTS
 httpx
+langchain-openai
+openai
+

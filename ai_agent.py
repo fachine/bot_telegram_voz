@@ -1,17 +1,12 @@
 import os
-import google.generativeai as genai
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+import httpx
+import base64
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from gtts import gTTS
 from dotenv import load_dotenv
 
 load_dotenv()
-
-# Configuração do Google GenAI SDK (necessário para STT multimodal)
-api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
-if not api_key:
-    print("ERRO CRÍTICO: Nenhuma chave API (GOOGLE_API_KEY ou GEMINI_API_KEY) encontrada no ambiente de inicialização!")
-genai.configure(api_key=api_key)
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 FAISS_INDEX_PATH = os.path.join(OUTPUT_DIR, "faiss_index")
@@ -19,20 +14,22 @@ FAISS_INDEX_PATH = os.path.join(OUTPUT_DIR, "faiss_index")
 class AIAgent:
     def __init__(self):
         try:
-            # Embeddings do Google
-            api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+            # Embeddings do OpenRouter
+            api_key = os.getenv("OPENROUTER_API_KEY")
             if not api_key:
-                print("ERRO CRÍTICO: Nenhuma chave API (GOOGLE_API_KEY ou GEMINI_API_KEY) encontrada no ambiente do agente!")
+                print("ERRO CRÍTICO: Nenhuma chave API (OPENROUTER_API_KEY) encontrada no ambiente do agente!")
             else:
                 masked_key = api_key[:4] + "*" * (len(api_key) - 4) if len(api_key) > 4 else "***"
-                print(f"Chave API encontrada: {masked_key} (Tamanho: {len(api_key)})")
+                print(f"Chave API OpenRouter encontrada: {masked_key} (Tamanho: {len(api_key)})")
                 
-            self.embeddings = GoogleGenerativeAIEmbeddings(
-                model="models/gemini-embedding-001",
-                google_api_key=api_key
+            self.api_key = api_key
+            self.embeddings = OpenAIEmbeddings(
+                openai_api_base="https://openrouter.ai/api/v1",
+                openai_api_key=api_key,
+                model="openai/text-embedding-3-small"
             )
             
-            # Carregar o índice FAISS (necessita ter sido criado com embeddings do Google)
+            # Carregar o índice FAISS (necessita ter sido criado com embeddings do OpenRouter)
             if os.path.exists(FAISS_INDEX_PATH):
                 self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, self.embeddings, allow_dangerous_deserialization=True)
                 self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 4})
@@ -40,17 +37,14 @@ class AIAgent:
                 print("Aviso: Índice FAISS não encontrado. Execute document_loader.py primeiro.")
                 self.retriever = None
             
-            # Chat model do Google
-            print("Inicializando ChatGoogleGenerativeAI...")
-            self.model = ChatGoogleGenerativeAI(
-                model="gemini-2.5-flash",
-                temperature=0.2,
-                google_api_key=api_key
+            # Chat model do OpenRouter
+            print("Inicializando ChatOpenAI para OpenRouter...")
+            self.model = ChatOpenAI(
+                openai_api_base="https://openrouter.ai/api/v1",
+                openai_api_key=api_key,
+                model_name="google/gemini-2.5-flash",
+                temperature=0.2
             )
-            
-            # Modelo para STT (usando o SDK direto do Google)
-            print("Inicializando GenerativeModel para STT...")
-            self.genai_model = genai.GenerativeModel("gemini-2.5-flash")
             
             self.ready = True
             print("AIAgent pronto!")
@@ -92,29 +86,46 @@ class AIAgent:
             return f"Ocorreu um erro ao processar sua pergunta: {e}"
 
     def stt(self, audio_file_path: str) -> str:
-        """Speech to Text usando Gemini (Multimodal)."""
+        """Speech to Text usando OpenRouter (Whisper)."""
         print(f"Iniciando STT para arquivo: {audio_file_path}")
+        if not self.api_key:
+            print("Erro no STT: OPENROUTER_API_KEY não configurada.")
+            return ""
         try:
-            # Upload do arquivo para o Google (temporário)
-            print("Fazendo upload do arquivo para o Google...")
-            audio_file = genai.upload_file(path=audio_file_path)
-            print(f"Upload concluído: {audio_file.name}")
+            with open(audio_file_path, "rb") as f:
+                audio_data = f.read()
+            base64_audio = base64.b64encode(audio_data).decode("utf-8")
             
-            # Gerar transcrição
-            print("Solicitando transcrição ao Gemini...")
-            response = self.genai_model.generate_content([
-                audio_file, 
-                "Por favor, transcreva este áudio exatamente como dito, sem adicionar comentários."
-            ])
+            ext = os.path.splitext(audio_file_path)[1].lower().replace(".", "")
+            format_type = ext if ext else "mp3"
             
-            # Deletar o arquivo do servidor do Google após o uso
-            print("Limpando arquivo do servidor...")
-            genai.delete_file(audio_file.name)
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json"
+            }
             
-            print(f"Transcrição concluída: {response.text}")
-            return response.text
+            payload = {
+                "model": "openai/whisper-1",
+                "input_audio": {
+                    "data": base64_audio,
+                    "format": format_type
+                }
+            }
+            
+            print("Solicitando transcrição ao OpenRouter (Whisper)...")
+            r = httpx.post(
+                "https://openrouter.ai/api/v1/audio/transcriptions",
+                headers=headers,
+                json=payload,
+                timeout=60.0
+            )
+            r.raise_for_status()
+            result = r.json()
+            transcription = result.get("text", "")
+            print(f"Transcrição concluída: {transcription}")
+            return transcription
         except Exception as e:
-            print(f"Erro no STT (Gemini): {e}")
+            print(f"Erro no STT (OpenRouter): {e}")
             return ""
 
     def tts(self, text: str, output_path: str):
