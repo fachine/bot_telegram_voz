@@ -8,7 +8,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuração do Google GenAI SDK (necessário para STT multimodal)
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+if not api_key:
+    print("ERRO CRÍTICO: Nenhuma chave API (GOOGLE_API_KEY ou GEMINI_API_KEY) encontrada no ambiente de inicialização!")
+genai.configure(api_key=api_key)
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 FAISS_INDEX_PATH = os.path.join(OUTPUT_DIR, "faiss_index")
@@ -17,7 +20,17 @@ class AIAgent:
     def __init__(self):
         try:
             # Embeddings do Google
-            self.embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+            api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+            if not api_key:
+                print("ERRO CRÍTICO: Nenhuma chave API (GOOGLE_API_KEY ou GEMINI_API_KEY) encontrada no ambiente do agente!")
+            else:
+                masked_key = api_key[:4] + "*" * (len(api_key) - 4) if len(api_key) > 4 else "***"
+                print(f"Chave API encontrada: {masked_key} (Tamanho: {len(api_key)})")
+                
+            self.embeddings = GoogleGenerativeAIEmbeddings(
+                model="models/gemini-embedding-001",
+                google_api_key=api_key
+            )
             
             # Carregar o índice FAISS (necessita ter sido criado com embeddings do Google)
             if os.path.exists(FAISS_INDEX_PATH):
@@ -32,7 +45,7 @@ class AIAgent:
             self.model = ChatGoogleGenerativeAI(
                 model="gemini-2.5-flash",
                 temperature=0.2,
-                google_api_key=os.getenv("GOOGLE_API_KEY")
+                google_api_key=api_key
             )
             
             # Modelo para STT (usando o SDK direto do Google)
