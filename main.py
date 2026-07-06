@@ -2,7 +2,6 @@ import os
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import document_loader
-import telegram_bot
 
 # Servidor básico para o Health Check do Render
 class HealthCheckHandler(BaseHTTPRequestHandler):
@@ -30,4 +29,5 @@ if __name__ == "__main__":
     
     # 3. Iniciar o bot do Telegram
     print("Iniciando bot do Telegram...")
+    import telegram_bot
     telegram_bot.main()
