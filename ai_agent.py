@@ -3,7 +3,7 @@ import httpx
 import base64
 import asyncio
 from langchain_openai import ChatOpenAI
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import FAISS
 from gtts import gTTS
 from dotenv import load_dotenv
@@ -25,8 +25,8 @@ class AIAgent:
                 print(f"Chave API OpenRouter encontrada: {masked_key} (Tamanho: {len(api_key)})")
                 
             self.api_key = api_key
-            # Usar embeddings locais (HuggingFace) para ser compatível com o document_loader
-            self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+            # Usar embeddings locais (FastEmbed) para ser compatível com o document_loader
+            self.embeddings = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
             
             # Chat model do OpenRouter (precisa ser inicializado antes do MultiQueryRetriever)
             print("Inicializando ChatOpenAI para OpenRouter...")

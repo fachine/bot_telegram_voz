@@ -347,8 +347,28 @@ async def cmd_atualizardocs(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     
     await update.message.reply_text("⏳ Iniciando atualização da base de conhecimento em background. Pode demorar alguns minutos...")
     import document_loader
-    import threading
-    threading.Thread(target=document_loader.process_documents, kwargs={"force": True}, daemon=True).start()
+    import asyncio
+    import logging
+    logger = logging.getLogger(__name__)
+    
+    global MENU_DATA, agent
+    
+    try:
+        loop = asyncio.get_running_loop()
+        await loop.run_in_executor(None, document_loader.process_documents, True)
+        
+        # Recarregar menu
+        MENU_DATA = load_menu()
+        from ai_agent import AIAgent
+        agent = AIAgent()
+        
+        await update.message.reply_text("✅ Atualização concluída com sucesso! O menu e as categorias foram atualizados.")
+    except Exception as e:
+        logger.error(f"Erro na atualização: {e}")
+        await update.message.reply_text(f"❌ Erro ao atualizar: {str(e)[:100]}")
+        
+        # Tentar recarregar o menu de qualquer forma, caso o JSON tenha sido gerado
+        MENU_DATA = load_menu()
 
 async def cmd_metricas(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     admin_id = os.getenv("ADMIN_USER_ID")

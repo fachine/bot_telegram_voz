@@ -13,6 +13,5 @@ gTTS
 httpx
 langchain-openai
 openai
-sentence-transformers
-langchain-huggingface
+fastembed
 

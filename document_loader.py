@@ -8,7 +8,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from docx2pdf import convert
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import FAISS
 from dotenv import load_dotenv
 
@@ -158,8 +158,8 @@ def process_documents(force=False):
             masked_key = api_key[:4] + "*" * (len(api_key) - 4) if len(api_key) > 4 else "***"
             print(f"Chave API OpenRouter encontrada: {masked_key} (Tamanho: {len(api_key)})")
             
-        print("Usando embeddings locais (HuggingFace) para evitar erros do OpenRouter...")
-        embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        print("Usando embeddings locais ultra-leves (FastEmbed) para evitar limite de disco...")
+        embeddings = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
         
         # Processar em lotes moderados para evitar erro 429 (RESOURCE_EXHAUSTED)
         batch_size = 10
