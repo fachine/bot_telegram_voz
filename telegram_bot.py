@@ -400,8 +400,8 @@ def main() -> None:
         logger.error("TELEGRAM_BOT_TOKEN não encontrado. Verifique o arquivo .env.")
         return
 
-    # Iniciar servidor de saúde em uma thread separada para o Hugging Face
-    threading.Thread(target=run_health_check, daemon=True).start()
+    # O servidor de saúde agora é iniciado no main.py para evitar conflitos de porta
+    # threading.Thread(target=run_health_check, daemon=True).start()
 
     # Diagnóstico inicial de rede
     check_network()

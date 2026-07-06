@@ -31,5 +31,5 @@ COPY --chown=user . .
 # Criar pastas de dados e garantir permissões
 RUN mkdir -p data/pdfs
 
-# Comando para rodar o bot
-CMD python document_loader.py && python telegram_bot.py
+# Comando para rodar o bot (unificado)
+CMD python main.py
