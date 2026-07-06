@@ -29,15 +29,7 @@ class AIAgent:
                 model="openai/text-embedding-3-small"
             )
             
-            # Carregar o índice FAISS (necessita ter sido criado com embeddings do OpenRouter)
-            if os.path.exists(FAISS_INDEX_PATH):
-                self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, self.embeddings, allow_dangerous_deserialization=True)
-                self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 4})
-            else:
-                print("Aviso: Índice FAISS não encontrado. Execute document_loader.py primeiro.")
-                self.retriever = None
-            
-            # Chat model do OpenRouter
+            # Chat model do OpenRouter (precisa ser inicializado antes do MultiQueryRetriever)
             print("Inicializando ChatOpenAI para OpenRouter...")
             self.model = ChatOpenAI(
                 openai_api_base="https://openrouter.ai/api/v1",
@@ -46,23 +38,37 @@ class AIAgent:
                 temperature=0.2
             )
             
+            # Carregar o índice FAISS (necessita ter sido criado com embeddings do OpenRouter)
+            if os.path.exists(FAISS_INDEX_PATH):
+                self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, self.embeddings, allow_dangerous_deserialization=True)
+                base_retriever = self.vectorstore.as_retriever(search_kwargs={"k": 4})
+                from langchain.retrievers.multi_query import MultiQueryRetriever
+                self.retriever = MultiQueryRetriever.from_llm(retriever=base_retriever, llm=self.model)
+                print("MultiQueryRetriever configurado com sucesso!")
+            else:
+                print("Aviso: Índice FAISS não encontrado. Execute document_loader.py primeiro.")
+                self.retriever = None
+            
             self.ready = True
             print("AIAgent pronto!")
         except Exception as e:
             print(f"Erro ao inicializar IA: {e}")
             self.ready = False
 
-    def ask(self, question: str) -> str:
-        print(f"Recebendo pergunta: {question}")
+    async def aask(self, question: str, user_id: str) -> str:
+        print(f"Recebendo pergunta (Async) do user {user_id}: {question}")
         if not self.ready:
             return "Desculpe, a IA não está configurada corretamente ou a base de conhecimento não foi processada."
         
         try:
+            import analytics
+            chat_history = analytics.get_recent_history(user_id)
+            
             context = ""
             if self.retriever:
-                print("Recuperando contexto...")
-                # 1. Recuperar contexto do FAISS
-                docs = self.retriever.invoke(question)
+                print("Recuperando contexto com RAG Híbrido/MultiQuery...")
+                # 1. Recuperar contexto do FAISS de forma assíncrona
+                docs = await self.retriever.ainvoke(question)
                 context = "\n\n---\n\n".join([doc.page_content for doc in docs])
             
             # 2. Prompt do sistema
@@ -71,12 +77,13 @@ class AIAgent:
                 "Use os seguintes trechos de contexto recuperados dos POPs (Procedimentos Operacionais Padrão) e documentos internos para responder à pergunta do funcionário. "
                 "Se você não souber a resposta ou ela não estiver no contexto, diga que não encontrou a informação nos documentos oficiais. "
                 "Sempre responda em português, de forma clara, educada e direta.\n\n"
-                f"Contexto:\n{context}"
+                f"Contexto dos Documentos:\n{context}\n\n"
+                f"{chat_history}"
             )
             
-            # 3. Chamar Gemini
+            # 3. Chamar Gemini assincronamente
             print("Chamando modelo Gemini...")
-            response = self.model.invoke([
+            response = await self.model.ainvoke([
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": question}
             ])

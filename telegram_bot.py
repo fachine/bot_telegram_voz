@@ -13,6 +13,10 @@ from telegram.request import HTTPXRequest
 from dotenv import load_dotenv
 import socket
 import urllib.request
+import analytics
+
+# Iniciar banco de dados SQLite para métricas
+analytics.init_db()
 
 # Carregar variáveis de ambiente
 load_dotenv()
@@ -227,7 +231,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
                     if agent and agent.ready:
                         # Usar a IA para fazer um resumo estruturado
                         prompt = f"Por favor, faça um resumo estruturado e fácil de ler (em bullet points) do seguinte documento operacional: \n\n{content[:4000]}"
-                        summary = agent.ask(prompt)
+                        summary = await agent.aask(prompt, str(query.from_user.id))
                         
                         keyboard = [[InlineKeyboardButton("🏠 Menu Principal", callback_data="main_menu")]]
                         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -262,7 +266,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     waiting_msg = await update.message.reply_text("🤔 Buscando na base de conhecimento...")
     
     if agent and agent.ready:
-        answer = agent.ask(update.message.text)
+        user_id = str(update.message.from_user.id)
+        answer = await agent.aask(update.message.text, user_id)
+        analytics.log_interaction(user_id, update.message.text, answer)
         await waiting_msg.edit_text(answer)
     else:
         await waiting_msg.edit_text("❌ Desculpe, a Inteligência Artificial ainda não está configurada ou a base de dados não foi carregada.")
@@ -297,7 +303,9 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
             # 3. Processar pergunta (RAG)
             await status_msg.edit_text("🔍 Buscando resposta...")
-            answer = agent.ask(transcription)
+            user_id = str(update.message.from_user.id)
+            answer = await agent.aask(transcription, user_id)
+            analytics.log_interaction(user_id, transcription, answer)
             
             # Enviar a resposta em texto primeiro (garante que o usuário receba a informação)
             await update.message.reply_text(f"📝 *Resposta:* \n\n{answer}", parse_mode="Markdown")
@@ -330,6 +338,29 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             os.remove(input_path)
         if os.path.exists(output_path):
             os.remove(output_path)
+
+async def cmd_atualizardocs(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    admin_id = os.getenv("ADMIN_USER_ID")
+    if admin_id and str(update.message.from_user.id) != admin_id:
+        await update.message.reply_text("🚫 Você não tem permissão para usar este comando.")
+        return
+    
+    await update.message.reply_text("⏳ Iniciando atualização da base de conhecimento em background. Pode demorar alguns minutos...")
+    import document_loader
+    import threading
+    threading.Thread(target=document_loader.process_documents, kwargs={"force": True}, daemon=True).start()
+
+async def cmd_metricas(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    admin_id = os.getenv("ADMIN_USER_ID")
+    if admin_id and str(update.message.from_user.id) != admin_id:
+        await update.message.reply_text("🚫 Você não tem permissão para usar este comando.")
+        return
+        
+    csv_path, resumo = analytics.export_metrics()
+    await update.message.reply_text(resumo, parse_mode="Markdown")
+    if csv_path and os.path.exists(csv_path):
+        with open(csv_path, 'rb') as f:
+            await update.message.reply_document(document=f, filename="metricas.csv")
 
 async def post_init(application: Application) -> None:
     """Set bot commands in the UI menu."""
@@ -429,6 +460,8 @@ def main() -> None:
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("menu", start))
     application.add_handler(CommandHandler("ajuda", start))
+    application.add_handler(CommandHandler("atualizardocs", cmd_atualizardocs))
+    application.add_handler(CommandHandler("metricas", cmd_metricas))
     application.add_handler(CallbackQueryHandler(button_callback))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     application.add_handler(MessageHandler(filters.VOICE, handle_voice))

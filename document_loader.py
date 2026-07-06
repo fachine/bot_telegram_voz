@@ -44,8 +44,13 @@ def init_dirs():
     if not os.path.exists(PDF_DIR):
         os.makedirs(PDF_DIR)
 
-def process_documents():
+def process_documents(force=False):
     init_dirs()
+    index_path = os.path.join(OUTPUT_DIR, "faiss_index")
+    if not force and os.path.exists(os.path.join(index_path, "index.faiss")):
+        print(f"Índice FAISS já existe em {index_path}. Pulando processamento. Use /atualizardocs para forçar.")
+        return
+
     print("Iniciando processamento de documentos...")
     
     docs = []
