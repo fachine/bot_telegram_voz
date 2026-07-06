@@ -231,7 +231,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
                     if agent and agent.ready:
                         # Usar a IA para fazer um resumo estruturado
                         prompt = f"Por favor, faça um resumo estruturado e fácil de ler (em bullet points) do seguinte documento operacional: \n\n{content[:4000]}"
-                        summary = await agent.aask(prompt, str(query.from_user.id))
+                        summary = await agent.aask_direct(prompt)
                         
                         keyboard = [[InlineKeyboardButton("🏠 Menu Principal", callback_data="main_menu")]]
                         reply_markup = InlineKeyboardMarkup(keyboard)

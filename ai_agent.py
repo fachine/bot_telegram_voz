@@ -67,8 +67,14 @@ class AIAgent:
             context = ""
             if self.retriever:
                 print("Recuperando contexto com RAG Híbrido/MultiQuery...")
-                # 1. Recuperar contexto do FAISS de forma assíncrona
-                docs = await self.retriever.ainvoke(question)
+                try:
+                    # 1. Recuperar contexto do FAISS de forma assíncrona
+                    docs = await self.retriever.ainvoke(question)
+                except Exception as e:
+                    print(f"Aviso: MultiQuery falhou ({e}). Usando busca padrão.")
+                    base_retriever = self.vectorstore.as_retriever(search_kwargs={"k": 4})
+                    docs = await base_retriever.ainvoke(question)
+                    
                 context = "\n\n---\n\n".join([doc.page_content for doc in docs])
             
             # 2. Prompt do sistema
@@ -91,6 +97,18 @@ class AIAgent:
             return response.content
         except Exception as e:
             return f"Ocorreu um erro ao processar sua pergunta: {e}"
+
+    async def aask_direct(self, prompt: str) -> str:
+        """Envia um prompt diretamente ao LLM sem usar o FAISS (ideal para resumos)"""
+        if not self.ready:
+            return "IA não configurada."
+        try:
+            response = await self.model.ainvoke([
+                {"role": "user", "content": prompt}
+            ])
+            return response.content
+        except Exception as e:
+            return f"Erro ao gerar resposta direta: {e}"
 
     def stt(self, audio_file_path: str) -> str:
         """Speech to Text usando OpenRouter (Whisper)."""
